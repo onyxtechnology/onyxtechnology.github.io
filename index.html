@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FanzyApps • app-ads.txt</title>
+  <meta name="description" content="FanzyApps verification site for publishing app-ads.txt" />
+
+  <style>
+    :root{
+      color-scheme: light;
+      --bg1:#0b1020;
+      --bg2:#0a2a3a;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.12);
+      --border: rgba(255,255,255,.18);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.55);
+      --accent1:#7c3aed; /* violet */
+      --accent2:#22c55e; /* green  */
+      --accent3:#06b6d4; /* cyan   */
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 15% 20%, rgba(124,58,237,.35), transparent 55%),
+        radial-gradient(1000px 700px at 85% 30%, rgba(6,182,212,.28), transparent 55%),
+        radial-gradient(900px 700px at 50% 90%, rgba(34,197,94,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 28px 16px;
+    }
+
+    .wrap{
+      width: min(980px, 100%);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+    }
+
+    .logo{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.40), transparent 60%),
+        linear-gradient(135deg, var(--accent1), var(--accent3));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    .brand h1{
+      font-size: 20px;
+      line-height: 1.1;
+      margin:0;
+      letter-spacing: .2px;
+    }
+    .brand .sub{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .dot{
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.16);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.06));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(700px 220px at 20% 0%, rgba(124,58,237,.22), transparent 60%),
+                  radial-gradient(700px 220px at 80% 0%, rgba(6,182,212,.16), transparent 60%);
+      pointer-events:none;
+    }
+
+    .card > *{ position:relative; }
+
+    .hero{
+      padding: 26px 22px 18px;
+    }
+
+    .title{
+      margin:0;
+      font-size: 30px;
+      letter-spacing: .2px;
+      line-height: 1.2;
+    }
+    .desc{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+
+    .section{
+      padding: 16px 22px 22px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+
+    .label{
+      color: var(--muted2);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .urlbox{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 14px 14px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .url{
+      font-family: var(--mono);
+      font-size: 13px;
+      color: rgba(255,255,255,.90);
+      overflow:hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn{
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.92);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      transition: transform .08s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.25);
+      transform: translateY(-1px);
+    }
+    .btn:active{ transform: translateY(0px); }
+
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,58,237,.85), rgba(6,182,212,.75));
+      border-color: rgba(255,255,255,.22);
+    }
+    .btn.primary:hover{
+      background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(6,182,212,.85));
+    }
+
+    .mini{
+      padding: 18px 18px 20px;
+    }
+
+    .mini h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .mini p{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .list{
+      margin: 14px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .li{
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .li strong{ color: rgba(255,255,255,.92); font-weight: 600; }
+
+    footer{
+      margin-top: 14px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      text-align:center;
+    }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.92);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .toast.show{
+      opacity: 1;
+      transform: translateX(-50%) translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>FanzyApps</h1>
+          <div class="sub">Public verification & policy hosting</div>
+        </div>
+      </div>
+
+      <div class="pill" title="GitHub Pages status">
+        <span class="dot" aria-hidden="true"></span>
+        Pages Active
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Main card -->
+      <section class="card">
+        <div class="hero">
+          <h2 class="title">app-ads.txt Publishing Site</h2>
+          <p class="desc">
+            This domain is used by <strong>FanzyApps</strong> to publish and maintain our
+            <span style="font-family:var(--mono);">app-ads.txt</span> file for advertising verification and transparency.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="label">Primary file URL</div>
+
+          <div class="urlbox" role="group" aria-label="app-ads.txt url actions">
+            <div class="url" id="adsUrl">https://fanzyapps.github.io/app-ads.txt</div>
+            <div class="actions">
+              <button class="btn" type="button" onclick="copyAds(this)">Copy URL</button>
+              <a class="btn primary" href="/app-ads.txt">View app-ads.txt</a>
+            </div>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="actions">
+            <a class="btn" href="https://github.com/fanzyapps/fanzyapps.github.io">GitHub Repository</a>
+            <a class="btn" href="https://github.com/fanzyapps/fanzyapps.github.io/blob/main/app-ads.txt">View Source</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Side card -->
+      <aside class="card mini">
+        <h2>Notes</h2>
+        <p>
+          If you’re an ad platform verifying this domain, use the file above.
+          The content is served as plain text from GitHub Pages.
+        </p>
+
+        <ul class="list">
+          <li class="li"><strong>Root path:</strong> <span class="mono">/app-ads.txt</span></li>
+          <li class="li"><strong>Maintained by:</strong> FanzyApps</li>
+          <li class="li"><strong>Hosting:</strong> GitHub Pages</li>
+        </ul>
+
+        <p style="margin-top:14px;color:var(--muted2)">
+          For updates, we commit changes to the repository and GitHub Pages publishes automatically.
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> FanzyApps • This site is for hosting verification files only.
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard ✓</div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function copyAds(btn){
+      const url = document.getElementById("adsUrl").innerText.trim();
+      navigator.clipboard.writeText(url).then(() => {
+        showToast();
+        if (btn) {
+          const old = btn.textContent;
+          btn.textContent = "Copied ✓";
+          setTimeout(() => (btn.textContent = old), 900);
+        }
+      });
+    }
+
+    let toastTimer;
+    function showToast(){
+      const t = document.getElementById("toast");
+      t.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove("show"), 1100);
+    }
+  </script>
+</body>
+</html>
