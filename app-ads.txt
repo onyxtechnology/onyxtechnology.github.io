@@ -1,4 +1,5 @@
 #google
+google.com, pub-2206316747924049, DIRECT, f08c47fec0942fa0
 datawrkz.com,:mwpmcm55_ID, DIRECT,google.com, pub-8856559311549217, RESELLER, f08c47fec0942fa0,Media.net Media.net, 8CU8BGW55, DIRECT,Onetag onetag.com, 7762f41ee0fb798-OB, DIRECT,Magnite rubiconproject.com, 23834, DIRECT, 0bfd66d529a55807,Pubmatic pubmatic.com, 162817, RESELLER, 5d62403b186f2ace,Smart Adserver smartadserver.com, 4340-OB, RESELLER
 google.com, pub-3896866553687183, DIRECT, f08c47fec0942fa0
 google.com, pub-9943159572865040, DIRECT, f08c47fec0942fa0
